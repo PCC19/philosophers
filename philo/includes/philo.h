@@ -63,5 +63,9 @@ typedef struct			s_vars{
 ** Functions
 */
 void	print_status(int philo_num, t_philo_state state, t_control *control);
+int		ft_isdigit(int c);
+int		is_integer(char *s);
+double	ft_atoi(const char *str);
+int		parse_inputs(int argc, char *argv[], t_control *control);
 
 #endif

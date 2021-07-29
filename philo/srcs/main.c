@@ -6,11 +6,24 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 18:22:50 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/29 20:51:50 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+static void	print_control(t_control control)
+{
+	(void)control;
+	printf("------ control -------\n");
+	printf("num:		%ld\n", control.num_philo);
+	printf("time_to_die:	%ld\n", control.time_to_die);
+	printf("time_to_eat:	%ld\n", control.time_to_eat);
+	printf("time_to_sleep:	%ld\n", control.time_to_sleep);
+	printf("number_eats:	%ld\n", control.number_eatings);
+	printf("--------------- -------\n");
+}
+
 
 int	main(int argc, char *argv[])
 {
@@ -19,10 +32,10 @@ int	main(int argc, char *argv[])
 	t_philo		*philo;
 	t_control	control;
 	// fork declarada como global no .h
-	
 
 	// processa inputs
-
+	parse_inputs(argc, argv, &control);
+		print_control(control);
 
 	// init
 	control.num_philo = 2;
@@ -55,7 +68,7 @@ int	main(int argc, char *argv[])
 
 	gettimeofday(&ini, NULL);
 	printf("ini: %ld\n", ini.tv_sec);
-	usleep(5000000);
+	usleep(1000000);
 	gettimeofday(&fin, NULL);
 	printf("fin: %ld\n", fin.tv_sec);
 	printf("dif: %ld\n", fin.tv_sec - ini.tv_sec);

@@ -6,7 +6,11 @@ SDIR =	./srcs/
 ODIR =	./objs/
 
 SRCS =	$(SDIR)main.c\
-		$(SDIR)print_status.c
+		$(SDIR)print_status.c\
+		$(SDIR)ft_isdigit.c\
+		$(SDIR)is_integer.c\
+		$(SDIR)ft_atoi.c\
+		$(SDIR)parse_inputs.c
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 
