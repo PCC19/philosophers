@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 17:54:44 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/29 18:18:38 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,36 @@ int	main(int argc, char *argv[])
 {
 	(void) argc;
 	(void) argv;
+	t_philo		philo;
+	t_control	control;
+	// fork declarada como global no .h
+	
+
+	// processa inputs
+
+
+	// init
+	control.num_philo = 2;
+	int	i = 0;
+	while (++i <= control.num_philo)
+	{
+		philo[i].num = i;
+		philo[i].state = SLEEPING;
+	}
+
+	gettimeofday(&control.simulation_start_time, NULL);
+	
+
+	// calc
+	print_status(0, EATING, &control);
+	print_status(0, SLEEPING, &control);
+	print_status(0, THINKING, &control);
+	print_status(0, DEAD, &control);
+	print_status(0, TAKEN_FORK, &control);
+
+
+	//finish
+
 
 	t_timeval ini;
 	t_timeval fin;

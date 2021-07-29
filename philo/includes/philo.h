@@ -9,6 +9,9 @@
 # include <sys/time.h>
 # include <pthread.h>
 
+#define MIL 1000;
+
+
 /*
 ** Data Structures 
 */
@@ -19,8 +22,8 @@ enum	e_philo_state
 	EATING,
 	SLEEPING,
 	THINKING,
-	DEAD
-	TAKEN_FORK;
+	DEAD,
+	TAKEN_FORK
 };
 
 static char g_state_msg[][50] =
@@ -38,7 +41,7 @@ typedef	struct			s_philo {
 		e_philo_state	state;
 }						t_philo;
 
-int						*g_forks;
+int						*g_fork;
 
 typedef struct			s_control{
 		t_timeval		simulation_start_time;

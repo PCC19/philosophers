@@ -5,7 +5,8 @@ HEADER_DIR =	./includes/
 SDIR =	./srcs/
 ODIR =	./objs/
 
-SRCS =	$(SDIR)main.c
+SRCS =	$(SDIR)main.c\
+		$(SDIR)print_status.c
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 
