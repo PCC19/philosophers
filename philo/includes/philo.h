@@ -17,28 +17,28 @@
 */
 typedef struct timeval t_timeval;
 
-enum	e_philo_state
+typedef	enum	e_philo_state
 {
 	EATING,
 	SLEEPING,
 	THINKING,
 	DEAD,
 	TAKEN_FORK
-};
+}				t_philo_state;
 
 static char g_state_msg[][50] =
 {
 	" is eating.",
 	" is sleeping",
 	" is thinking.",
-	" is dead."
-	" has taken a fork.",
-}
+	" is dead.",
+	" has taken a fork."
+};
 
 
 typedef	struct			s_philo {
 		int				num;
-		e_philo_state	state;
+		t_philo_state	state;
 }						t_philo;
 
 int						*g_fork;
@@ -62,8 +62,6 @@ typedef struct			s_vars{
 /*
 ** Functions
 */
-
-
-
+void	print_status(int philo_num, t_philo_state state, t_control *control);
 
 #endif

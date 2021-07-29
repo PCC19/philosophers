@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 18:18:38 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/29 18:22:50 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char *argv[])
 {
 	(void) argc;
 	(void) argv;
-	t_philo		philo;
+	t_philo		*philo;
 	t_control	control;
 	// fork declarada como global no .h
 	
@@ -26,6 +26,7 @@ int	main(int argc, char *argv[])
 
 	// init
 	control.num_philo = 2;
+	philo = (t_philo* )malloc(sizeof(t_philo*) * control.num_philo);
 	int	i = 0;
 	while (++i <= control.num_philo)
 	{
@@ -45,6 +46,8 @@ int	main(int argc, char *argv[])
 
 
 	//finish
+	free(philo);
+
 
 
 	t_timeval ini;
