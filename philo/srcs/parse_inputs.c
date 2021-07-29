@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 19:42:40 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 20:50:16 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/29 20:54:01 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void validate_inputs(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_integer(argv[i]) || ft_atoi(argv[i]) < 0)
+		if (!is_integer(argv[i]) || ft_atoi(argv[i]) <= 0)
 			exit (1);
 		i++;
 	}

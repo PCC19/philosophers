@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 20:51:50 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/29 22:47:33 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ static void	print_control(t_control control)
 
 int	main(int argc, char *argv[])
 {
-	(void) argc;
-	(void) argv;
 	t_philo		*philo;
 	t_control	control;
 	// fork declarada como global no .h
@@ -38,7 +36,6 @@ int	main(int argc, char *argv[])
 		print_control(control);
 
 	// init
-	control.num_philo = 2;
 	philo = (t_philo* )malloc(sizeof(t_philo*) * control.num_philo);
 	int	i = 0;
 	while (++i <= control.num_philo)
@@ -51,11 +48,12 @@ int	main(int argc, char *argv[])
 	
 
 	// calc
-	print_status(0, EATING, &control);
-	print_status(0, SLEEPING, &control);
-	print_status(0, THINKING, &control);
-	print_status(0, DEAD, &control);
-	print_status(0, TAKEN_FORK, &control);
+//	print_status(0, EATING, &control);
+//	print_status(0, SLEEPING, &control);
+//	print_status(0, THINKING, &control);
+//	print_status(0, DEAD, &control);
+//	print_status(0, TAKEN_FORK, &control);
+	philosopher(&control, &philo, g_fork, 3);
 
 
 	//finish
@@ -91,8 +89,7 @@ int	main(int argc, char *argv[])
 		array de mutexs ?
 		array de threads ?
 
-	funcao para imprimir timestamp
-		funcao simples para transicao de estado e print time_stamp
+	funcao simples para transicao de estado e print time_stamp
 	funcao para transicao de estado
 
 

@@ -39,6 +39,7 @@ static char g_state_msg[][50] =
 typedef	struct			s_philo {
 		int				num;
 		t_philo_state	state;
+		long int		last_meal_start_time;
 }						t_philo;
 
 int						*g_fork;
@@ -67,5 +68,8 @@ int		ft_isdigit(int c);
 int		is_integer(char *s);
 double	ft_atoi(const char *str);
 int		parse_inputs(int argc, char *argv[], t_control *control);
+long int	elapse_time(long int start_time);
+int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num);
+
 
 #endif
