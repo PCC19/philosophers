@@ -15,7 +15,8 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)elapsed_time.c\
 		$(SDIR)now.c\
 		$(SDIR)print_control.c\
-		$(SDIR)msleep.c
+		$(SDIR)msleep.c\
+		$(SDIR)finish.c
 
 
 

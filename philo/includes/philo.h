@@ -73,6 +73,8 @@ int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num);
 long long int	now(void);
 void	print_control(t_control control);
 int	msleep(long long int time_in_ms);
+void	finish(t_philo *philo);
+
 
 
 

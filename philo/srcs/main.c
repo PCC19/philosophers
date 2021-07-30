@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 18:09:32 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/30 19:04:38 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ int	main(int argc, char *argv[])
 
 
 	//finish
-	free(philo);
-
+	finish(philo);
 
 	printf("Hello World \n");
 	exit (0);
