@@ -23,7 +23,8 @@ typedef	enum	e_philo_state
 	SLEEPING,
 	THINKING,
 	DEAD,
-	TAKEN_FORK
+	TAKEN_FORK,
+	INI
 }				t_philo_state;
 
 static char g_state_msg[][50] =
@@ -40,6 +41,7 @@ typedef	struct			s_philo {
 		int				num;
 		t_philo_state	state;
 		long int		last_meal_start_time;
+		int				number_of_meals;
 }						t_philo;
 
 int						*g_fork;
