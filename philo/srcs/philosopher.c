@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 22:48:18 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/29 22:52:44 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num)
 			if (--control->number_eatings == 0)
 			{
 				alive = 0;
+				printf("elapsed time: %ld\n", elapsed_time(philo[num]->last_meal_start_time));
 				print_status(num, DEAD, control);
 			}
 

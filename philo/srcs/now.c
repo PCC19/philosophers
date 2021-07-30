@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   elapsed_time.c                                     :+:      :+:    :+:   */
+/*   now.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/29 21:11:22 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 17:15:42 by pcunha           ###   ########.fr       */
+/*   Created: 2021/07/30 17:11:11 by pcunha            #+#    #+#             */
+/*   Updated: 2021/07/30 17:12:27 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-long int	elapsed_time(long int start_time)
+long int	now(void)
 {
-	return ((now() - start_time) * 1000);
+	t_timeval time;
+
+	gettimeofday(&time, NULL);
+	return (time.tv_sec);
 }

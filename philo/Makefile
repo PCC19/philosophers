@@ -11,8 +11,11 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)is_integer.c\
 		$(SDIR)ft_atoi.c\
 		$(SDIR)parse_inputs.c\
+		$(SDIR)philosopher.c\
 		$(SDIR)elapsed_time.c\
-		$(SDIR)philosopher.c
+		$(SDIR)now.c
+
+
 
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))

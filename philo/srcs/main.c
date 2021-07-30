@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 22:47:33 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/30 17:15:20 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ int	main(int argc, char *argv[])
 	t_philo		*philo;
 	t_control	control;
 	// fork declarada como global no .h
+	long int lixo = now();
+	printf("now: %ld\n", lixo);
+	usleep(1000000);
+	printf("elapsed %ld\n", elapsed_time(lixo));
+	exit (0);
+
+
 
 	// processa inputs
 	parse_inputs(argc, argv, &control);
