@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 21:11:22 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 17:15:42 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/30 18:12:05 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 long int	elapsed_time(long int start_time)
 {
-	return ((now() - start_time) * 1000);
+	return ((now() - start_time));
 }

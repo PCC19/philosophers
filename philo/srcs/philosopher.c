@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/29 22:52:44 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/30 18:08:53 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,30 @@
 
 int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num)
 {	
-	t_timeval	time;
 	int			alive;
 	(void) g_fork;
 
 	alive = 1;
 	while(alive)
 	{
-		gettimeofday(&time, NULL);
-		philo[num]->last_meal_start_time = time.tv_sec;
-		usleep(control->time_to_eat);
+		(*philo)[num].last_meal_start_time = now();
+
+		(*philo)[num].state = EATING;
 		print_status(num, EATING, control);
-		philo[num]->state = SLEEPING;
-		usleep(control->time_to_sleep);
+		usleep(control->time_to_eat * MIL);
+
+		(*philo)[num].state = SLEEPING;
 		print_status(num, SLEEPING, control);
-		philo[num]->state = THINKING;
+		usleep(control->time_to_sleep * MIL);
+
+		(*philo)[num].state = THINKING;
 		print_status(num, THINKING, control);
+		usleep(control->time_to_die * MIL);
 			if (--control->number_eatings == 0)
 			{
 				alive = 0;
-				printf("elapsed time: %ld\n", elapsed_time(philo[num]->last_meal_start_time));
 				print_status(num, DEAD, control);
+				printf("elapsed time: %ld\n", elapsed_time((*philo)[num].last_meal_start_time));
 			}
 
 		// start countdown (time_to_eat)

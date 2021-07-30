@@ -9,7 +9,7 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-#define MIL 1000;
+#define MIL 1000
 
 
 /*
@@ -45,7 +45,7 @@ typedef	struct			s_philo {
 int						*g_fork;
 
 typedef struct			s_control{
-		t_timeval		simulation_start_time;
+		long int		simulation_start_time;
 		long int		num_philo;
 		long int		time_to_die;
 		long int		time_to_eat;
@@ -71,6 +71,8 @@ int		parse_inputs(int argc, char *argv[], t_control *control);
 long int	elapsed_time(long int start_time);
 int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num);
 long int	now(void);
+void	print_control(t_control control);
+
 
 
 

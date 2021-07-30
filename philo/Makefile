@@ -13,7 +13,9 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)parse_inputs.c\
 		$(SDIR)philosopher.c\
 		$(SDIR)elapsed_time.c\
-		$(SDIR)now.c
+		$(SDIR)now.c\
+		$(SDIR)print_control.c\
+
 
 
 
