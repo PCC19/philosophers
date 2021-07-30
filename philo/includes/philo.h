@@ -68,11 +68,11 @@ int		ft_isdigit(int c);
 int		is_integer(char *s);
 double	ft_atoi(const char *str);
 int		parse_inputs(int argc, char *argv[], t_control *control);
-long int	elapsed_time(long int start_time);
+long long int	elapsed_time(long long int start_time);
 int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num);
-long int	now(void);
+long long int	now(void);
 void	print_control(t_control control);
-
+int	msleep(long long int time_in_ms);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 18:08:53 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/07/30 18:23:39 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ int	philosopher(t_control *control, t_philo **philo, int *g_fork, int num)
 
 		(*philo)[num].state = EATING;
 		print_status(num, EATING, control);
-		usleep(control->time_to_eat * MIL);
+		msleep(control->time_to_eat);
 
 		(*philo)[num].state = SLEEPING;
 		print_status(num, SLEEPING, control);
-		usleep(control->time_to_sleep * MIL);
+		msleep(control->time_to_sleep);
 
 		(*philo)[num].state = THINKING;
 		print_status(num, THINKING, control);
-		usleep(control->time_to_die * MIL);
+		msleep(control->time_to_die);
 			if (--control->number_eatings == 0)
 			{
 				alive = 0;
