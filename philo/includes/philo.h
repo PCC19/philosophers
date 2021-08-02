@@ -79,5 +79,7 @@ void	print_control(t_control control);
 int	msleep(long long int time_in_ms);
 void	finish(t_philo *philo);
 t_philo*	init_philo(t_control *control);
+void	init_fork(t_control *control);
+
 
 #endif

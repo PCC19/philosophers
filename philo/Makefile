@@ -17,7 +17,9 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)print_control.c\
 		$(SDIR)msleep.c\
 		$(SDIR)finish.c\
-		$(SDIR)init_philo.c
+		$(SDIR)init_philo.c\
+		$(SDIR)init_fork.c
+
 
 
 

@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:00:55 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 18:24:38 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/02 18:39:11 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static void	print_philo(t_philo *philo, int i)
 	printf("stat: %d\n", philo[i].state);
 	printf("meal_time: %ld\n", philo[i].last_meal_start_time);
 	printf("n meals: %d\n", philo[i].number_of_meals);
-	printf("fork left: %d\n", philo[i].idx_fork_left);
-	printf("fork right: %d\n", philo[i].idx_fork_right);
+	printf("fork left: %d value: %d \n", philo[i].idx_fork_left, g_fork[philo[i].idx_fork_left]);
+	printf("fork right: %d value: %d \n", philo[i].idx_fork_right, g_fork[philo[i].idx_fork_right]);
 }
 
 t_philo* 	init_philo(t_control *control)
