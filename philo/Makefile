@@ -18,7 +18,7 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)msleep.c\
 		$(SDIR)finish.c\
 		$(SDIR)init_philo.c\
-		$(SDIR)init_fork.c
+		$(SDIR)init_forks.c
 
 
 
@@ -59,4 +59,4 @@ run:
 val:	$(OBJS)
 	$(CC) $(OBJS) $(C_FLAGS) $(HEADERS) $(L_FLAGS) -o $(NAME)
 	echo CONCLUIDO
-	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./philo
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all ./philo 3 5000 1000 1500 2

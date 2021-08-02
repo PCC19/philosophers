@@ -6,13 +6,13 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:00:55 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 18:39:11 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/02 19:28:18 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void	print_philo(t_philo *philo, int i)
+static void	print_philo(t_philo *philo, int *forks, int i)
 {
 	printf(" ------------------- \n");
 	printf("i: %d\n", i); 
@@ -20,16 +20,18 @@ static void	print_philo(t_philo *philo, int i)
 	printf("stat: %d\n", philo[i].state);
 	printf("meal_time: %ld\n", philo[i].last_meal_start_time);
 	printf("n meals: %d\n", philo[i].number_of_meals);
-	printf("fork left: %d value: %d \n", philo[i].idx_fork_left, g_fork[philo[i].idx_fork_left]);
-	printf("fork right: %d value: %d \n", philo[i].idx_fork_right, g_fork[philo[i].idx_fork_right]);
+	printf("forks left: %d\n", philo[i].idx_fork_left);
+	printf("value: %d \n", forks[philo[i].idx_fork_left]);
+	printf("forks right: %d \n", philo[i].idx_fork_right);
+	printf("value: %d \n", forks[philo[i].idx_fork_right]);
 }
 
-t_philo* 	init_philo(t_control *control)
+t_philo* 	init_philo(t_control *control, int *forks)
 {
 	int			i;
 	t_philo		*philo;
 
-	philo = (t_philo* )malloc(sizeof(t_philo*) * control->num_philo);
+	philo = (t_philo* )malloc(sizeof(t_philo) * control->num_philo);
 	i = 0;
 	while (i < control->num_philo)
 	{
@@ -39,7 +41,7 @@ t_philo* 	init_philo(t_control *control)
 		philo[i].number_of_meals = 0;
 		philo[i].idx_fork_left = (i);
 		philo[i].idx_fork_right = (i + 1) % (control->num_philo);
-			print_philo(philo, i);
+			print_philo(philo, forks, i);
 		i++;
 	}
 	return (philo);
