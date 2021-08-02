@@ -42,6 +42,8 @@ typedef	struct			s_philo {
 		t_philo_state	state;
 		long int		last_meal_start_time;
 		int				number_of_meals;
+		int				idx_fork_left;
+		int				idx_fork_right;
 }						t_philo;
 
 int						*g_fork;
@@ -76,9 +78,6 @@ long long int	now(void);
 void	print_control(t_control control);
 int	msleep(long long int time_in_ms);
 void	finish(t_philo *philo);
-
-
-
-
+t_philo*	init_philo(t_control *control);
 
 #endif

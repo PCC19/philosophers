@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   finish.c                                           :+:      :+:    :+:   */
+/*   init_fork.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 19:02:54 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 18:34:27 by pcunha           ###   ########.fr       */
+/*   Created: 2021/08/02 18:26:35 by pcunha            #+#    #+#             */
+/*   Updated: 2021/08/02 18:34:16 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	finish(t_philo *philo)
+void	init_philo(t_control *control)
 {
-	free(philo);
-	free(g_fork);
-	exit(0);
+	g_fork = (int*) malloc(sizeof(int) * control->num_philo);
+	memset(g_fork, 0, control->num_philo);
 }

@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 19:04:38 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/02 18:26:25 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ int	main(int argc, char *argv[])
 	parse_inputs(argc, argv, &control);
 
 	// init
-	philo = (t_philo* )malloc(sizeof(t_philo*) * control.num_philo);
 	control.simulation_start_time = now();
 		print_control(control);
+	philo = init_philo(&control);
+	init_fork();
+
+
 
 	// calc
 	philosopher(&control, &philo, g_fork, 3);
