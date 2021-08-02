@@ -18,13 +18,10 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)msleep.c\
 		$(SDIR)finish.c\
 		$(SDIR)init_philo.c\
-		$(SDIR)init_forks.c
-
-
-
-
-
-
+		$(SDIR)init_forks.c\
+		$(SDIR)eating.c\
+		$(SDIR)sleeping.c\
+		$(SDIR)thinking.c
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 

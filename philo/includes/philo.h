@@ -77,6 +77,8 @@ int				msleep(long long int time_in_ms);
 void			finish(t_philo *philo, int *forks);
 t_philo*		init_philo(t_control *control, int *forks);
 int				*init_forks(t_control *control);
-
+void			eating(t_control *control, t_philo **philo, int num);
+void			sleeping(t_control *control, t_philo **philo, int num);
+int				thinking(t_control *control, t_philo **philo, int num, int **forks);
 
 #endif
