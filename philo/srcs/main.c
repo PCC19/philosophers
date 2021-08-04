@@ -6,19 +6,23 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:38:09 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 00:37:57 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-
 
 int	main(int argc, char *argv[])
 {
 	t_philo		*philo;
 	t_control	control;
 	int			i;
+
+//	printf(GRN "green\n" RESET);
+//	printf("%sred%s\n", RED, RESET);
+//	printf("%sblue%s\n", CYN, RESET);
+//	return (0);
+
 
 	// processa inputs
 	validate_inputs(argc, argv);

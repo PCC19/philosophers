@@ -27,7 +27,7 @@ SRCS =	$(SDIR)main.c\
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 
 CC = clang
-HEADERS = -I./$(HEADER_DIR) -I./$(LIBFT_DIR)
+HEADERS = -I $(HEADER_DIR) -I./$(LIBFT_DIR)
 C_FLAGS = -Wall -Werror -Wextra -g
 C_SANIT = -fsanitize=address
 L_FLAGS = -L -lpthread

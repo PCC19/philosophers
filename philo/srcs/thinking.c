@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:11:14 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:10:31 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:49:23 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	thinking(t_philo *philo)
 		{
 			// checar se todos terminaram de comer !
 			printf("simulation end !\n");
-			finish(philo);
+			//finish(philo);
 			return (0);
 		}
 		else if (elapsed_time(philo->last_meal_start_time) > philo->control->time_to_die)
