@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 19:02:54 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:14:59 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:27:30 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	finish(t_philo *philo)
 			pthread_mutex_destroy(&philo->control->forks[i]);
 			i++;
 		}
+		free(philo->control->forks);
 		free(philo);
 		philo = NULL;
 	}

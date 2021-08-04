@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:14:18 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:25:35 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char *argv[])
 		print_control(control);
 
 	// calc
-			// inicializar threads
+		// inicializar threads
 	philosopher(philo);
 	printf("saiu philosopher\n");
 
