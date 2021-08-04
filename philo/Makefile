@@ -10,7 +10,8 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)ft_isdigit.c\
 		$(SDIR)is_integer.c\
 		$(SDIR)ft_atoi.c\
-		$(SDIR)parse_inputs.c\
+		$(SDIR)validate_inputs.c\
+		$(SDIR)init_control.c\
 		$(SDIR)philosopher.c\
 		$(SDIR)elapsed_time.c\
 		$(SDIR)now.c\

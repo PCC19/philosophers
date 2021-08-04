@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_fork.c                                        :+:      :+:    :+:   */
+/*   init_forks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 18:26:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 18:54:15 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:18:28 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	*init_forks(t_control *control)
+void	init_forks(t_control *control)
 {
-	int *forks;
+	int i;
 
-	forks = (int*) malloc(sizeof(int) * control->num_philo);
-	memset(forks, 0, control->num_philo * sizeof(int));
-	return (forks);
+	control->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t));
+	i = 0;
+	while (i < control->num_philo)
+	{
+		pthread_mutex_init(&control->forks[i], NULL);
+		i++;
+	}
 }

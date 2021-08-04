@@ -6,13 +6,13 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:11:14 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 20:19:53 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:10:31 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	thinking(t_control *control, t_philo **philo, int num, int **forks)
+int	thinking(t_philo *philo)
 {
 	// start countdown (time_to_eat)
 	// try to get forkss
@@ -20,23 +20,23 @@ int	thinking(t_control *control, t_philo **philo, int num, int **forks)
 			// come
 			// decrementa 
 		// se nao conseguir: die
-	(*philo)[num - 1].state = THINKING;
-	print_status(num, THINKING, control);
+	philo[philo->num - 1].state = THINKING;
+	print_status(philo->num, THINKING, philo->control);
 	msleep(1000);	// simula o tempo de conseguir garfos
-		if (--control->number_eatings == 0)
+		if (--philo->control->number_eatings == 0)
 		{
 			// checar se todos terminaram de comer !
 			printf("simulation end !\n");
-			finish(*philo, *forks);
+			finish(philo);
 			return (0);
 		}
-		else if (elapsed_time((*philo)[num - 1].last_meal_start_time) > control->time_to_die)
+		else if (elapsed_time(philo->last_meal_start_time) > philo->control->time_to_die)
 		{
-			print_status(num, DEAD, control);
+			print_status(philo->num, DEAD, philo->control);
 			return (0);
 			// sai da thread
 		}
 		else
-			(*philo)[num - 1].last_meal_start_time = now();
+			philo->last_meal_start_time = now();
 	return (1);
 }

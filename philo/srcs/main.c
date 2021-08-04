@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 19:26:00 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:14:18 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,30 @@
 
 int	main(int argc, char *argv[])
 {
-	int			*forks;
 	t_philo		*philo;
 	t_control	control;
-	// forks declarada como global no .h
 
 	// processa inputs
-	parse_inputs(argc, argv, &control);
+	validate_inputs(argc, argv);
 
 	// init
+	init_control(argc, argv, &control);
+	init_forks(&control);
+	philo = init_philo(&control);
 	control.simulation_start_time = now();
 		print_control(control);
-	forks = init_forks(&control);
-	philo = init_philo(&control, forks);
-
 
 	// calc
-	philosopher(&control, &philo, &forks, 1);
+			// inicializar threads
+	philosopher(philo);
 	printf("saiu philosopher\n");
 
-
 	//finish
-	finish(philo, forks);
+	finish(philo);
+		// free control dentro do philo ?
+		// free mutex fork
+		// free threads
+
 
 	printf("Hello World \n");
 	exit (0);

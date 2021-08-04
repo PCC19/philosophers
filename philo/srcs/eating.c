@@ -6,15 +6,15 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/02 20:04:38 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:18:56 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	eating(t_control *control, t_philo **philo, int num)
+void	eating(t_philo *philo)
 {
-		(*philo)[num - 1].state = EATING;
-		print_status(num, EATING, control);
-		msleep(control->time_to_eat);
+		philo[philo->num - 1].state = EATING;
+		print_status(philo->num, EATING, philo->control);
+		msleep(philo->control->time_to_eat);
 }
