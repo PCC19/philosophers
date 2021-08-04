@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:11:14 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:49:23 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 00:58:06 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	thinking(t_philo *philo)
 		// se nao conseguir: die
 	philo[philo->num - 1].state = THINKING;
 	print_status(philo->num, THINKING, philo->control);
-	msleep(1000);	// simula o tempo de conseguir garfos
+	smart_sleep(1000);	// simula o tempo de conseguir garfos
 		if (--philo->control->number_eatings == 0)
 		{
 			// checar se todos terminaram de comer !

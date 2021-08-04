@@ -86,6 +86,7 @@ long long int	elapsed_time(long long int start_time);
 long long int	now(void);
 void			print_control(t_control control);
 int				msleep(long long int time_in_ms);
+void			smart_sleep(long long int time_to_sleep);
 void			finish(t_philo *philo);
 t_philo*		init_philo(t_control *control);
 void			init_forks(t_control *control);
