@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:32:35 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/04 17:38:09 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,15 @@ int	main(int argc, char *argv[])
 		pthread_create(&philo[i].thread_philo, NULL, philosopher, &philo[i]);
 		i++;
 	}
+	i = 0;
+	while (i < control.num_philo)
+	{
+		pthread_join(philo[i].thread_philo, NULL);
+		i++;
+	}
+
 	//philosopher(philo);
-	printf("saiu philosopher\n");
+	//printf("saiu philosopher\n");
 
 	//finish
 	finish(philo);
