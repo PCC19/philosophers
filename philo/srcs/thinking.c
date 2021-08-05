@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:11:14 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 00:58:06 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 12:53:47 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	thinking(t_philo *philo)
 {
+	// para so qdo todos comerem ou qdo um morre
+
 	// start countdown (time_to_eat)
 	// try to get forkss
 		// se conseguir:
@@ -21,7 +23,9 @@ int	thinking(t_philo *philo)
 			// decrementa 
 		// se nao conseguir: die
 	philo[philo->num - 1].state = THINKING;
+	//pthread_mutex_lock(&philo->control->print_mutex);
 	print_status(philo->num, THINKING, philo->control);
+	//pthread_mutex_unlock(&philo->control->print_mutex);
 	smart_sleep(1000);	// simula o tempo de conseguir garfos
 		if (--philo->control->number_eatings == 0)
 		{
@@ -32,7 +36,9 @@ int	thinking(t_philo *philo)
 		}
 		else if (elapsed_time(philo->last_meal_start_time) > philo->control->time_to_die)
 		{
+			//pthread_mutex_lock(&philo->control->print_mutex);
 			print_status(philo->num, DEAD, philo->control);
+			//pthread_mutex_unlock(&philo->control->print_mutex);
 			return (0);
 			// sai da thread
 		}

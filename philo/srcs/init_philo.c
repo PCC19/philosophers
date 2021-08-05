@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:00:55 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:17:01 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 12:55:50 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ static void	print_philo(t_philo *philo, int i)
 	printf("n meals: %d\n", philo[i].number_of_meals);
 	printf("forks left: %d\n", philo[i].idx_fork_left);
 	printf("forks right: %d \n", philo[i].idx_fork_right);
-		print_control(*philo[i].control);
+//		print_control(*philo[i].control);
 }
 
 t_philo* 	init_philo(t_control *control)
 {
 	int			i;
 	t_philo		*philo;
+	(void) print_philo;
 
 	philo = (t_philo* )malloc(sizeof(t_philo) * control->num_philo);
 	i = 0;
@@ -41,7 +42,7 @@ t_philo* 	init_philo(t_control *control)
 		philo[i].idx_fork_left = (i);
 		philo[i].idx_fork_right = (i + 1) % (control->num_philo);
 		philo[i].control = control;
-			print_philo(philo, i);
+//			print_philo(philo, i);
 		i++;
 	}
 	return (philo);
