@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 17:28:38 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 17:34:51 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 13:20:17 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	print_control(t_control control)
 	printf("time_to_die:	%ld\n", control.time_to_die);
 	printf("time_to_eat:	%ld\n", control.time_to_eat);
 	printf("time_to_sleep:	%ld\n", control.time_to_sleep);
-	printf("number_eats:	%ld\n", control.number_eatings);
+	printf("number_of_meals:	%ld\n", control.number_of_meals);
+	printf("continue_simulattion:	%d\n", control.continue_simulation);
 	printf("\nsimulatio start time:	%ld\n", control.simulation_start_time);
 	printf("--------------- -------\n");
 }

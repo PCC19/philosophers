@@ -31,7 +31,8 @@ typedef	enum	e_philo_state
 	THINKING,
 	DEAD,
 	TAKEN_FORK,
-	INI
+	INI,
+	FULL
 }				t_philo_state;
 
 static char g_color[5][10] = 
@@ -58,16 +59,17 @@ typedef struct			s_control{
 		long int		time_to_die;
 		long int		time_to_eat;
 		long int		time_to_sleep;
-		long int		number_eatings;
+		long int		number_of_meals;
 		pthread_mutex_t	*forks;
 		pthread_mutex_t	print_mutex;
+		int				continue_simulation;
 }						t_control;
 
 typedef	struct			s_philo {
 		int				num;
 		t_philo_state	state;
 		long int		last_meal_start_time;
-		int				number_of_meals;
+		int				meals_eaten;;
 		int				idx_fork_left;
 		int				idx_fork_right;
 		pthread_t		thread_philo;
@@ -94,7 +96,7 @@ void			init_forks(t_control *control);
 void			*philosopher(void *param);
 void			eating(t_philo *philo);
 void			sleeping(t_philo *philo);
-int				thinking(t_philo *philo);
+void			thinking(t_philo *philo);
 
 
 

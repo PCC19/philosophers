@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:00:55 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 12:55:50 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 13:06:39 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	print_philo(t_philo *philo, int i)
 	printf("num: %d\n", philo[i].num);
 	printf("stat: %d\n", philo[i].state);
 	printf("meal_time: %ld\n", philo[i].last_meal_start_time);
-	printf("n meals: %d\n", philo[i].number_of_meals);
+	printf("n meals: %d\n", philo[i].meals_eaten);
 	printf("forks left: %d\n", philo[i].idx_fork_left);
 	printf("forks right: %d \n", philo[i].idx_fork_right);
 //		print_control(*philo[i].control);
@@ -38,7 +38,7 @@ t_philo* 	init_philo(t_control *control)
 		philo[i].num = i + 1;
 		philo[i].state = INI;
 		philo[i].last_meal_start_time = control->simulation_start_time;
-		philo[i].number_of_meals = 0;
+		philo[i].meals_eaten = 0;
 		philo[i].idx_fork_left = (i);
 		philo[i].idx_fork_right = (i + 1) % (control->num_philo);
 		philo[i].control = control;

@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 12:56:14 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 13:20:02 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int	init_control(int argc, char *argv[], t_control *control)
 	control->time_to_eat = ft_atoi(argv[i++]);
 	control->time_to_sleep = ft_atoi(argv[i++]);
 	if (argc == 6 && is_integer(argv[i]))
-		control->number_eatings = ft_atoi(argv[i++]);
+		control->number_of_meals = ft_atoi(argv[i++]);
 	else
-		control->number_eatings = -1;
+		control->number_of_meals = -1;
+	control->continue_simulation = 0;
 	return (0);
 }

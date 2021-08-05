@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:35:02 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 14:16:55 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 void	*philosopher(void *param)
 {	
 	t_philo		*philo;
-	int			alive;
 
 	philo = (t_philo *)param;
-	alive = 1;
-	while(alive)
+	while(philo->state != FULL)
 	{
 		// try_forks
 		eating(philo);
+		// release forks
 		sleeping(philo);
-		alive = thinking(philo);
+		thinking(philo);
+		// se todos comeram num_meals para
+
+		// se algum morreu para
 	}
 	return (NULL);
 }
