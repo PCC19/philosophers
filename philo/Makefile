@@ -23,7 +23,9 @@ SRCS =	$(SDIR)main.c\
 		$(SDIR)init_forks.c\
 		$(SDIR)eating.c\
 		$(SDIR)sleeping.c\
-		$(SDIR)thinking.c
+		$(SDIR)thinking.c\
+		$(SDIR)get_forks.c\
+		$(SDIR)drop_forks.c
 
 OBJS =	$(patsubst $(SDIR)%.c, $(ODIR)%.o, $(SRCS))
 

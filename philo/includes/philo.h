@@ -24,6 +24,15 @@
 */
 typedef struct timeval t_timeval;
 
+static char g_color[5][10] = 
+{
+	GRN,
+	CYN,
+	MAG,
+	RED,
+	YEL
+};
+
 typedef	enum	e_philo_state
 {
 	EATING,
@@ -34,15 +43,6 @@ typedef	enum	e_philo_state
 	INI,
 	FULL
 }				t_philo_state;
-
-static char g_color[5][10] = 
-{
-	GRN,
-	CYN,
-	MAG,
-	RED,
-	YEL
-};
 
 const static char g_state_msg[][50] =
 {
@@ -98,9 +98,8 @@ void			*philosopher(void *param);
 void			eating(t_philo *philo);
 void			sleeping(t_philo *philo);
 void			thinking(t_philo *philo);
-
-
-
+void			drop_forks(t_philo *philo);
+void			get_forks(t_philo *philo);
 
 
 #endif

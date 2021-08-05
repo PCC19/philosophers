@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 14:41:28 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 14:58:42 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,27 +47,4 @@ int	main(int argc, char *argv[])
 	finish(philo);
 		// free control dentro do philo ?
 		// free mutex fork
-
-
-	printf("Hello World \n");
-	exit (0);
 }
-/* criar struct para philos
-	estado
-		eating (ocupa forkss)
-		sleeping (nao faz nada)
-		thinking (procura forkss)
-	id: num de 1 a N
-
-	Variaveis
-		forkss: array de ints
-		array de filos
-		controle
-		array de mutexs ?
-		array de threads ?
-
-	funcao simples para transicao de estado e print time_stamp
-	funcao para transicao de estado
-
-
-*/
