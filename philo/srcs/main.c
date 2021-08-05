@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 12:52:48 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 14:41:28 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int argc, char *argv[])
 	// init
 	init_control(argc, argv, &control);
 	init_forks(&control);
-	philo = init_philo(&control);
 	control.simulation_start_time = now();
+	philo = init_philo(&control);
 //		print_control(control);
 
 	// calc

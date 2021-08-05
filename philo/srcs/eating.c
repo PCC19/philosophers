@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 14:32:22 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 14:42:24 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	eating(t_philo *philo)
 {
 	if (philo->state != FULL)
 	{
+		philo->last_meal_start_time = now();
 		philo->state = EATING;
 //		pthread_mutex_lock(&philo->control->print_mutex);
 		print_status(philo->num, EATING, philo->control);
