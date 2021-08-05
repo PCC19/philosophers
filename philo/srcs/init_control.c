@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 14:31:03 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 14:56:47 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ int	init_control(int argc, char *argv[], t_control *control)
 		control->number_of_meals = -1;
 	control->continue_simulation = 0;
 	pthread_mutex_init(&control->print_mutex, NULL);
+	pthread_mutex_init(&control->dead_mutex, NULL);
 	return (0);
 }

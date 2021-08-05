@@ -62,6 +62,7 @@ typedef struct			s_control{
 		long int		number_of_meals;
 		int				continue_simulation;
 		pthread_mutex_t	print_mutex;
+		pthread_mutex_t	dead_mutex;
 		pthread_mutex_t	*forks;
 }						t_control;
 
