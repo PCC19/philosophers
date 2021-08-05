@@ -31,16 +31,16 @@ CC = clang
 HEADERS = -I $(HEADER_DIR) -I./$(LIBFT_DIR)
 C_FLAGS = -Wall -Werror -Wextra -g
 C_SANIT = -fsanitize=address
-L_FLAGS = -L -lpthread
-
+#L_FLAGS = -pthread 
+#P_THREAD = -pthread -lpthread
 
 $(NAME):	$(OBJS) 
-	$(CC) $(OBJS) $(C_FLAGS) $(C_SANIT) $(HEADERS) $(L_FLAGS) -o $@
+	$(CC) $(OBJS) $(C_FLAGS) $(C_SANIT) $(HEADERS) $(L_FLAGS) -o $@ $(P_THREAD)
 	echo CONCLUIDO
 
 $(ODIR)%.o: $(SDIR)%.c
 		mkdir -p $(ODIR)
-		$(CC) $(C_FLAGS) $(HEADERS) -c $< -o $@
+		$(CC) $(C_FLAGS) $(HEADERS) $(L_FLAGS) -c $< -o $@
 
 all: philo
 

@@ -60,6 +60,7 @@ typedef struct			s_control{
 		long int		time_to_sleep;
 		long int		number_eatings;
 		pthread_mutex_t	*forks;
+		pthread_mutex_t	print_mutex;
 }						t_control;
 
 typedef	struct			s_philo {

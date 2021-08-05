@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 17:59:07 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/05 00:48:12 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/05 12:22:34 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	print_status(int philo_num, t_philo_state state, t_control *control)
 	long long int	agora;
 
 	(void) agora;
+	pthread_mutex_lock(&control->print_mutex);
 //	agora = now();
 //	printf("agora: %ld\n ", agora);
 //	printf("timest:%ld\n ", control->simulation_start_time);
@@ -28,4 +29,5 @@ void	print_status(int philo_num, t_philo_state state, t_control *control)
 	printf("%d", philo_num);
 	printf("%s\n", g_state_msg[state]);
 	printf(RESET);
+	pthread_mutex_unlock(&control->print_mutex);
 }
