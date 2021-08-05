@@ -47,9 +47,9 @@ typedef	enum	e_philo_state
 const static char g_state_msg[][50] =
 {
 	" is eating.",
-	" is sleeping",
+	" is sleeping.",
 	" is thinking.",
-	" is dead.",
+	" died.",
 	" has taken a fork."
 };
 
@@ -60,9 +60,9 @@ typedef struct			s_control{
 		long int		time_to_eat;
 		long int		time_to_sleep;
 		long int		number_of_meals;
-		int				continue_simulation;
 		pthread_mutex_t	print_mutex;
 		pthread_mutex_t	dead_mutex;
+		pthread_mutex_t	flag_mutex;
 		pthread_mutex_t	*forks;
 }						t_control;
 
