@@ -44,7 +44,7 @@ static char g_color[5][10] =
 	YEL
 };
 
-static char g_state_msg[][50] =
+const static char g_state_msg[][50] =
 {
 	" is eating.",
 	" is sleeping",
@@ -60,9 +60,9 @@ typedef struct			s_control{
 		long int		time_to_eat;
 		long int		time_to_sleep;
 		long int		number_of_meals;
-		pthread_mutex_t	*forks;
-		pthread_mutex_t	print_mutex;
 		int				continue_simulation;
+		pthread_mutex_t	print_mutex;
+		pthread_mutex_t	*forks;
 }						t_control;
 
 typedef	struct			s_philo {
