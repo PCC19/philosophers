@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:06:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 17:37:11 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:03:42 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	sleeping(t_philo *philo)
 	long long int time;
 
 	time = now();
-	if (philo->state != FULL && philo->state != DEAD)
+	if (philo->state != DEAD)
 	{
 		philo->state = SLEEPING;
 		print_status(philo->num, SLEEPING, philo->control);
@@ -25,7 +25,7 @@ int	sleeping(t_philo *philo)
 		{
 			if (check_death(philo))
 			{
-				printf("g\n");
+//				printf("g\n");
 				return (0);
 			}
 			smart_sleep(1);

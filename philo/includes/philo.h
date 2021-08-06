@@ -63,6 +63,7 @@ struct			s_control{
 		long int		time_to_eat;
 		long int		time_to_sleep;
 		long int		number_of_meals;
+		long int		count_meals;
 		pthread_mutex_t	print_mutex;
 		pthread_mutex_t	dead_mutex;
 		pthread_mutex_t	*forks;
@@ -72,7 +73,7 @@ struct			s_philo {
 		int				num;
 		t_philo_state	state;
 		long int		last_meal_start_time;
-		int				meals_eaten;;
+		int				meals_eaten;
 		int				idx_fork_left;
 		int				idx_fork_right;
 		pthread_t		thread_philo;

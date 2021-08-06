@@ -6,7 +6,7 @@
 /*   By: pcunha <pcunha@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:48:36 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 16:52:48 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 19:54:52 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,26 @@
 int	check_death(t_philo *philo)
 {
 	int i;
-	if (philo->state != DEAD)
+
+	pthread_mutex_lock(&philo->control->dead_mutex);
+	i = -1;
+	while (++i < philo->control->num_philo)
 	{
-		pthread_mutex_lock(&philo->control->dead_mutex);
-		i = 0;
-		while (i < philo->control->num_philo)
+		if (elapsed_time(philo->ptr_all_philos[i].last_meal_start_time)
+			> philo->control->time_to_die)
 		{
-			if (elapsed_time(philo->ptr_all_philos[i].last_meal_start_time)
-				> philo->control->time_to_die)
-			{
-				philo->ptr_all_philos[i].state = DEAD;
-				pthread_mutex_unlock(&philo->control->dead_mutex);
-				return (1);
-			}
-			i++;
+			philo->ptr_all_philos[i].state = DEAD;
+			pthread_mutex_unlock(&philo->control->dead_mutex);
+			return (1);
 		}
-		pthread_mutex_unlock(&philo->control->dead_mutex);
-		return (0);
+		if (philo->ptr_all_philos[i].meals_eaten == philo->control->number_of_meals)
+			philo->control->count_meals++;
 	}
+	if (philo->control->count_meals == philo->control->num_philo)
+	{
+		pthread_mutex_unlock(&philo->control->dead_mutex);
+		return(1);
+	}
+	pthread_mutex_unlock(&philo->control->dead_mutex);
 	return (0);
 }
