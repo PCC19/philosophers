@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 16:57:55 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 17:37:05 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	eating(t_philo *philo)
 				drop_forks(philo);
 				return (0);
 			}
-			smart_sleep(10);
+			smart_sleep(1);
 		}
 	}
 	return (1);

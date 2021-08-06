@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 16:47:56 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 17:39:12 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,17 @@ void	*philosopher(void *param)
 			break;
 		}
 		// check
-//		if (check_death(philo))
-//		{	printf("c\n");
-//			break;
-//		}
+		if (check_death(philo))
+		{	printf("c\n");
+			drop_forks(philo);
+			break;
+		}
 		drop_forks(philo);
 		// check
-//		if (check_death(philo))
-//		{	printf("d\n");
-//			break;
-//		}
+		if (check_death(philo))
+		{	printf("d\n");
+			break;
+		}
 		if (sleeping(philo) ==0) // check
 		{	printf("e\n");
 			break; 

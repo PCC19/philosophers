@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:06:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 16:59:15 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 17:37:11 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	sleeping(t_philo *philo)
 				printf("g\n");
 				return (0);
 			}
-			smart_sleep(10);
+			smart_sleep(1);
 		}
 	}
 	return (1);
