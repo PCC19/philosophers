@@ -6,13 +6,13 @@
 /*   By: pcunha <pcunha@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:48:36 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 12:13:29 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 15:45:54 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	check_death(t_philo *philo)
+int	check_death(t_philo *philo)
 {
 	int i;
 
@@ -24,9 +24,12 @@ void	check_death(t_philo *philo)
 			> philo->control->time_to_die)
 		{
 			philo->ptr_all_philos[i].state = DEAD;
-			philo->control->continue_simulation = 0;
+			print_status(philo->ptr_all_philos[i].num,  DEAD, philo->control);
+			pthread_mutex_unlock(&philo->control->dead_mutex);
+			return (1);
 		}
 		i++;
 	}
 	pthread_mutex_unlock(&philo->control->dead_mutex);
+	return (0);
 }

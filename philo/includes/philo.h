@@ -63,7 +63,6 @@ struct			s_control{
 		long int		time_to_eat;
 		long int		time_to_sleep;
 		long int		number_of_meals;
-		int				continue_simulation;
 		pthread_mutex_t	print_mutex;
 		pthread_mutex_t	dead_mutex;
 		pthread_mutex_t	*forks;
@@ -99,12 +98,12 @@ void			finish(t_philo *philo);
 t_philo*		init_philo(t_control *control);
 void			init_forks(t_control *control);
 void			*philosopher(void *param);
-void			eating(t_philo *philo);
-void			sleeping(t_philo *philo);
-void			thinking(t_philo *philo);
+int				eating(t_philo *philo);
+int				sleeping(t_philo *philo);
+int				thinking(t_philo *philo);
 void			drop_forks(t_philo *philo);
 void			get_forks(t_philo *philo);
-void			check_death(t_philo *philo);
+int				check_death(t_philo *philo);
 
 
 #endif

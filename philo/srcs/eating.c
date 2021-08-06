@@ -6,25 +6,32 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 12:29:38 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 16:00:41 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	eating(t_philo *philo)
+int	eating(t_philo *philo)
 {
 //	if (philo->state != FULL && philo->state != DEAD)
-	if (philo->state != FULL && philo->state != DEAD && philo->control->continue_simulation == 1)
+	if (philo->state != FULL && philo->state != DEAD)
 	{
 		philo->last_meal_start_time = now();
 		philo->state = EATING;
-//		pthread_mutex_lock(&philo->control->print_mutex);
 		print_status(philo->num, EATING, philo->control);
 		philo->meals_eaten++;
 		if (philo->meals_eaten == philo->control->number_of_meals)
 			philo->state = FULL;
-//		pthread_mutex_unlock(&philo->control->print_mutex);
-		smart_sleep(philo->control->time_to_eat);
+		while (elapsed_time(philo->last_meal_start_time) < philo->control->time_to_eat)
+		{
+			if (check_death(philo))
+			{
+				drop_forks(philo);
+				return (0);
+			}
+			smart_sleep(1);
+		}
 	}
+	return (1);
 }
