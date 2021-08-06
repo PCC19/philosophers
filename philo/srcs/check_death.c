@@ -6,7 +6,7 @@
 /*   By: pcunha <pcunha@student.42sp.org.br>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 11:48:36 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 19:54:52 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:06:26 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	check_death(t_philo *philo)
 	int i;
 
 	pthread_mutex_lock(&philo->control->dead_mutex);
+	philo->control->count_meals = 0;
 	i = -1;
 	while (++i < philo->control->num_philo)
 	{
