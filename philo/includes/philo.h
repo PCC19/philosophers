@@ -53,19 +53,23 @@ const static char g_state_msg[][50] =
 	" has taken a fork."
 };
 
-typedef struct			s_control{
+typedef struct s_control	t_control;
+typedef struct s_philo		t_philo;
+
+struct			s_control{
 		long int		simulation_start_time;
 		long int		num_philo;
 		long int		time_to_die;
 		long int		time_to_eat;
 		long int		time_to_sleep;
 		long int		number_of_meals;
+		int				continue_simulation;
 		pthread_mutex_t	print_mutex;
 		pthread_mutex_t	dead_mutex;
 		pthread_mutex_t	*forks;
-}						t_control;
+};
 
-typedef	struct			s_philo {
+struct			s_philo {
 		int				num;
 		t_philo_state	state;
 		long int		last_meal_start_time;
@@ -74,7 +78,8 @@ typedef	struct			s_philo {
 		int				idx_fork_right;
 		pthread_t		thread_philo;
 		t_control		*control;
-}						t_philo;
+		t_philo			*ptr_all_philos;
+};
 
 /*
 ** Functions
@@ -99,6 +104,7 @@ void			sleeping(t_philo *philo);
 void			thinking(t_philo *philo);
 void			drop_forks(t_philo *philo);
 void			get_forks(t_philo *philo);
+void			check_death(t_philo *philo);
 
 
 #endif
