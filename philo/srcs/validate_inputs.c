@@ -6,13 +6,13 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 19:42:40 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 16:53:47 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:26:43 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void validate_inputs(int argc, char *argv[])
+void	validate_inputs(int argc, char *argv[])
 {
 	int		i;
 

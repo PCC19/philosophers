@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 19:49:13 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:22:06 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	init_control(int argc, char *argv[], t_control *control)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	control->num_philo = ft_atoi(argv[i++]);

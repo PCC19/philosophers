@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 20:03:13 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:28:01 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	eating(t_philo *philo)
 		philo->state = EATING;
 		print_status(philo->num, EATING, philo->control);
 		philo->meals_eaten++;
-		while (elapsed_time(philo->last_meal_start_time) < philo->control->time_to_eat)
+		while (elapsed_time(philo->last_meal_start_time)
+			< philo->control->time_to_eat)
 		{
 			if (check_death(philo))
 			{

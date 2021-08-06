@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 18:26:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/04 17:18:28 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:22:30 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	init_forks(t_control *control)
 {
-	int i;
+	int	i;
 
 	control->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t));
 	i = 0;

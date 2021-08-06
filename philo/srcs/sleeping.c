@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:06:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 20:03:42 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:26:28 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	sleeping(t_philo *philo)
 {
-	long long int time;
+	long long int	time;
 
 	time = now();
 	if (philo->state != DEAD)

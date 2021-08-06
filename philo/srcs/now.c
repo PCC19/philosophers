@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 17:11:11 by pcunha            #+#    #+#             */
-/*   Updated: 2021/07/30 18:19:09 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:26:04 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 long long int	now(void)
 {
-	t_timeval time;
+	t_timeval	time;
 
 	gettimeofday(&time, NULL);
-	return (time.tv_sec * 1000 + time.tv_usec / 1000) ;
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
 }

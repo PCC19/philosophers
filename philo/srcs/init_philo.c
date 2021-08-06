@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:00:55 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 11:56:28 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/06 20:24:42 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,22 @@
 static void	print_philo(t_philo *philo, int i)
 {
 	printf(" ------------------- \n");
-	printf("i: %d\n", i); 
+	printf("i: %d\n", i);
 	printf("num: %d\n", philo[i].num);
 	printf("stat: %d\n", philo[i].state);
 	printf("meal_time: %ld\n", philo[i].last_meal_start_time);
 	printf("n meals: %d\n", philo[i].meals_eaten);
 	printf("forks left: %d\n", philo[i].idx_fork_left);
 	printf("forks right: %d \n", philo[i].idx_fork_right);
-//		print_control(*philo[i].control);
 }
 
-t_philo* 	init_philo(t_control *control)
+t_philo	*init_philo(t_control *control)
 {
 	int			i;
 	t_philo		*philo;
-	(void) print_philo;
 
-	philo = (t_philo* )malloc(sizeof(t_philo) * control->num_philo);
+	(void)print_philo;
+	philo = (t_philo *) malloc (sizeof (t_philo) * control->num_philo);
 	i = 0;
 	while (i < control->num_philo)
 	{
