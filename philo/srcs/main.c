@@ -6,12 +6,11 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 20:49:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 16:54:20 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:56:16 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-# include <pthread.h>
 
 int	main(int argc, char *argv[])
 {
@@ -19,39 +18,23 @@ int	main(int argc, char *argv[])
 	t_control	control;
 	int			i;
 
-	// processa inputs
 	validate_inputs(argc, argv);
-
-	// init
 	init_control(argc, argv, &control);
 	init_forks(&control);
 	control.simulation_start_time = now();
 	philo = init_philo(&control);
-//		print_control(control);
-
-	// calc
-	i = 0;
-	while (i < control.num_philo)
-	{
+	i = -1;
+	while (++i < control.num_philo)
 		pthread_create(&philo[i].thread_philo, NULL, philosopher, &philo[i]);
-		i++;
-	}
+	i = -1;
+	while (++i < control.num_philo)
+		pthread_join(philo[i].thread_philo, NULL);
 	i = 0;
 	while (i < control.num_philo)
-	{
-		pthread_join(philo[i].thread_philo, NULL);
-		i++;
-	}
-	i = 0;
-	while(i < control.num_philo)
 	{
 		if (philo[i].state == DEAD)
 			print_status(philo[i].num, DEAD, &control);
 		i++;
 	}
-
-	//finish
 	finish(philo);
-		// free control dentro do philo ?
-		// free mutex fork
 }

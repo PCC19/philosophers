@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/07 13:13:19 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:49:02 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	eating(t_philo *philo)
 		{
 			if (check_stop(philo))
 			{
-//				printf("f\n");
 				drop_forks(philo);
 				return (0);
 			}

@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 17:00:55 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 20:24:42 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:48:23 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ t_philo	*init_philo(t_control *control)
 		philo[i].idx_fork_right = (i + 1) % (control->num_philo);
 		philo[i].control = control;
 		philo[i].ptr_all_philos = philo;
-//			print_philo(philo, i);
 		i++;
 	}
 	return (philo);

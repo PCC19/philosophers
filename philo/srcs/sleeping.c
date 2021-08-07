@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:06:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/07 13:13:24 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:49:07 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	sleeping(t_philo *philo)
 		{
 			if (check_stop(philo))
 			{
-//				printf("g\n");
 				return (0);
 			}
 			smart_sleep(1);

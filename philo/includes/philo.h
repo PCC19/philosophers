@@ -9,22 +9,22 @@
 # include <sys/time.h>
 # include <pthread.h>
 
-#define MIL 1000
+# define MIL 1000
 
-#define RED "\e[0;31m"
-#define GRN "\e[0;32m"
-#define YEL "\e[0;33m"
-#define BLU "\e[0;34m"
-#define MAG "\e[0;35m"
-#define CYN "\e[0;36m"
-#define RESET "\e[0m"
+# define RED "\e[0;31m"
+# define GRN "\e[0;32m"
+# define YEL "\e[0;33m"
+# define BLU "\e[0;34m"
+# define MAG "\e[0;35m"
+# define CYN "\e[0;36m"
+# define RESET "\e[0m"
 
 /*
 ** Data Structures 
 */
-typedef struct timeval t_timeval;
+typedef struct timeval		t_timeval;
 
-static char g_color[5][10] = 
+static char					g_color[5][10] =
 {
 	GRN,
 	CYN,
@@ -33,7 +33,7 @@ static char g_color[5][10] =
 	YEL
 };
 
-typedef	enum	e_philo_state
+enum				e_philo_state
 {
 	EATING,
 	SLEEPING,
@@ -42,9 +42,11 @@ typedef	enum	e_philo_state
 	TAKEN_FORK,
 	INI,
 	FULL
-}				t_philo_state;
+};
 
-const static char g_state_msg[][50] =
+typedef enum e_philo_state	t_philo_state;
+
+const static char			g_state_msg[][50] =
 {
 	" is eating.",
 	" is sleeping.",
@@ -56,35 +58,36 @@ const static char g_state_msg[][50] =
 typedef struct s_control	t_control;
 typedef struct s_philo		t_philo;
 
-struct			s_control{
-		long int		simulation_start_time;
-		long int		num_philo;
-		long int		time_to_die;
-		long int		time_to_eat;
-		long int		time_to_sleep;
-		long int		number_of_meals;
-		long int		count_meals;
-		pthread_mutex_t	print_mutex;
-		pthread_mutex_t	dead_mutex;
-		pthread_mutex_t	*forks;
+struct						s_control{
+	long int			simulation_start_time;
+	long int			num_philo;
+	long int			time_to_die;
+	long int			time_to_eat;
+	long int			time_to_sleep;
+	long int			number_of_meals;
+	long int			count_meals;
+	pthread_mutex_t		print_mutex;
+	pthread_mutex_t		dead_mutex;
+	pthread_mutex_t		*forks;
 };
 
-struct			s_philo {
-		int				num;
-		t_philo_state	state;
-		long int		last_meal_start_time;
-		int				meals_eaten;
-		int				idx_fork_left;
-		int				idx_fork_right;
-		pthread_t		thread_philo;
-		t_control		*control;
-		t_philo			*ptr_all_philos;
+struct						s_philo {
+	int					num;
+	t_philo_state		state;
+	long int			last_meal_start_time;
+	int					meals_eaten;
+	int					idx_fork_left;
+	int					idx_fork_right;
+	pthread_t			thread_philo;
+	t_control			*control;
+	t_philo				*ptr_all_philos;
 };
 
 /*
 ** Functions
 */
-void			print_status(int philo_num, t_philo_state state, t_control *control);
+void			print_status(int philo_num, t_philo_state state,
+					t_control *control);
 int				ft_isdigit(int c);
 int				is_integer(char *s);
 double			ft_atoi(const char *str);
@@ -96,7 +99,7 @@ void			print_control(t_control control);
 int				msleep(long long int time_in_ms);
 void			smart_sleep(long long int time_to_sleep);
 void			finish(t_philo *philo);
-t_philo*		init_philo(t_control *control);
+t_philo			*init_philo(t_control *control);
 void			init_forks(t_control *control);
 void			*philosopher(void *param);
 int				eating(t_philo *philo);
