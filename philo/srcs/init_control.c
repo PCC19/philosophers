@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 16:54:35 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 20:22:06 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:35:24 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	init_control(int argc, char *argv[], t_control *control)
 	if (argc == 6 && is_integer(argv[i]))
 		control->number_of_meals = ft_atoi(argv[i++]);
 	else
-		control->number_of_meals = -1;
+		control->number_of_meals = INT_MAX;
 	control->count_meals = 0;
 	pthread_mutex_init(&control->print_mutex, NULL);
 	pthread_mutex_init(&control->dead_mutex, NULL);
