@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/07 13:33:07 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:40:47 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*philosopher(void *param)
 	t_philo		*philo;
 
 	philo = (t_philo *)param;
+	if ((philo->num % 2) == 0)
+		smart_sleep(1);
 	while (philo->state != DEAD && !check_stop(philo))
 	{
 		get_forks(philo);
