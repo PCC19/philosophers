@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 20:55:06 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 20:03:28 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:12:53 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	*philosopher(void *param)
 	t_philo		*philo;
 
 	philo = (t_philo *)param;
-	while (philo->state != DEAD && !check_death(philo))
+	while (philo->state != DEAD && !check_stop(philo))
 	{
 		get_forks(philo);
 		// check
-		if (check_death(philo))
+		if (check_stop(philo))
 		{	
 //			printf("A\n");
 			break;
@@ -32,7 +32,7 @@ void	*philosopher(void *param)
 			break;
 		}
 		// check
-		if (check_death(philo))
+		if (check_stop(philo))
 		{	
 //			printf("c\n");
 			drop_forks(philo);
@@ -40,7 +40,7 @@ void	*philosopher(void *param)
 		}
 		drop_forks(philo);
 		// check
-		if (check_death(philo))
+		if (check_stop(philo))
 		{	
 //			printf("d\n");
 			break;

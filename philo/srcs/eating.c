@@ -6,7 +6,7 @@
 /*   By: pcunha <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 20:02:41 by pcunha            #+#    #+#             */
-/*   Updated: 2021/08/06 20:28:01 by pcunha           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:13:19 by pcunha           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	eating(t_philo *philo)
 		while (elapsed_time(philo->last_meal_start_time)
 			< philo->control->time_to_eat)
 		{
-			if (check_death(philo))
+			if (check_stop(philo))
 			{
 //				printf("f\n");
 				drop_forks(philo);

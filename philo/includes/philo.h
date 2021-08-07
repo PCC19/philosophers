@@ -105,6 +105,6 @@ int				thinking(t_philo *philo);
 void			drop_forks(t_philo *philo);
 void			get_forks(t_philo *philo);
 int				check_death(t_philo *philo);
-
+int				check_stop(t_philo *philo);
 
 #endif
